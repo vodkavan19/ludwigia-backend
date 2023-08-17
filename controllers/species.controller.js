@@ -48,8 +48,9 @@ exports.updateOne = async (req, res, next) => {
                 new ApiError(409, "Thông tin bạn vừa nhập trùng với Loài đã tồn tại")
             );
         }
+
         var { 
-            avatar,
+            avatar, description,
             microsurgerys, microsurgery_file_idx,
             phytochemicals, phytochemical_file_idx,
             ...rest
@@ -57,8 +58,10 @@ exports.updateOne = async (req, res, next) => {
 
         var data = { 
             ...rest,
+            description: description.join(''),
             short_name: rest.sci_name.replace(rest.author, '').trim(), 
         }
+        
         const existedDB = await SpeciesModel.findById(req.params.id);
         
         const newAvatar = req.files.find(file => file.field == 'avatar')
