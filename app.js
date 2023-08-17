@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookieParser = require('cookie-parser')
-const ApiError = require('./middlewares/errorHandler');
+// const ApiError = require('./middlewares/errorHandler');
 
 const genusRoute = require('./routers/genus.route');
 const speciesRoute = require('./routers/species.router');
@@ -15,9 +15,9 @@ app.use(cors({
 app.use(cookieParser());
 app.use(express.json());
 
-app.use('/api/genus', genusRoute);
-app.use('/api/species', speciesRoute);
-app.use('/api/admin', adminRoute);
+app.use('/genus', genusRoute);
+app.use('/species', speciesRoute);
+app.use('/admin', adminRoute);
 
 // app.use((req, res, next) => {
 //     return next(new ApiError(404, "Resource not found"));
