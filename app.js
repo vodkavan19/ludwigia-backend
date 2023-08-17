@@ -19,9 +19,9 @@ app.use('/api/genus', genusRoute);
 app.use('/api/species', speciesRoute);
 app.use('/api/admin', adminRoute);
 
-app.use((req, res, next) => {
-    return next(new ApiError(404, "Resource not found"));
-})
+// app.use((req, res, next) => {
+//     return next(new ApiError(404, "Resource not found"));
+// })
 
 app.use((err, req, res, next) => {
     return res.status(err.statusCode || 500).json({
