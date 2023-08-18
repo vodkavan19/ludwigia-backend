@@ -46,6 +46,4 @@ router.route('/toggle-status/:id')
 router.route('/by_genus/:genusId')
     .get(speciesController.getResultByGenus)
 
-
-
 module.exports = router;

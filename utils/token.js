@@ -4,7 +4,7 @@ exports.generateAccessToken = (data) => {
     return jwt.sign(
         { id: data._id },
         process.env.JWT_ACCESS_SECRET_KEY,
-        { expiresIn: "60s" }
+        { expiresIn: "30s" }
     );
 }
 

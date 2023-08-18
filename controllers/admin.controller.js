@@ -49,9 +49,9 @@ exports.login = async (req, res, next) => {
             res.cookie('refreshToken', refreshToken, {
                 maxAge: 7 * 24 * 60 * 60 * 1000,
                 httpOnly: true,
-                secure: false,
+                secure: true,
                 path: '/',
-                sameSite: 'lax',
+                sameSite: 'none',
             });
             const { password, ...others } = admin._doc;
 
