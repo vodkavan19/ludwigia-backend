@@ -1,7 +1,7 @@
 require('dotenv').config();
 const app = require("./app");
 
-const { connectDB } = require('./configs/db')
+const { connectDB } = require('./configs/mongodb')
 connectDB();
 
 app.listen(process.env.APP_PORT, () => {

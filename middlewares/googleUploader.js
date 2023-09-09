@@ -54,7 +54,6 @@ const uploadGGDrive = async (file) => {
     })
     const webContentLink = fileData.data.webContentLink;
 
-
     return {
         field: file.fieldname,
         fileId: resultUploaded.data.id,

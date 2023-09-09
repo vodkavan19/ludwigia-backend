@@ -72,7 +72,7 @@ const speciesSchema = new mongoose.Schema({
         bio_reference: { type: Number },
         chemical_group: { type: String },
         segment: { type: String },
-        physical_properties: { type: String, required: true },
+        physical_properties: { type: String, default: '' },
         spectrum: { type: Array, required: true },
         chemical_structure: {
             fileId: { type: String, required: true },
